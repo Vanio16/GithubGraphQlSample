@@ -1,0 +1,38 @@
+query SearchRepos($searchText: String!) {
+    search(first: 20, query: $searchText, type: REPOSITORY) {
+        nodes {
+            ... on Repository {
+                ...RepositoryDetail
+            }
+        }
+    }
+}
+
+mutation AddStar($repositoryId: ID!) {
+    addStar(input: {clientMutationId: "75573448", starrableId: $repositoryId}) {
+        starrable {
+            ... on Repository {
+                ...RepositoryDetail
+            }
+        }
+    }
+}
+
+mutation RemoveStar($repositoryId: ID!) {
+    removeStar(input: {clientMutationId: "75573448", starrableId: $repositoryId}) {
+        starrable {
+            ... on Repository {
+                ...RepositoryDetail
+            }
+        }
+    }
+}
+
+fragment RepositoryDetail on Repository {
+    id
+    nameWithOwner
+    viewerHasStarred
+    stargazers {
+        totalCount
+    }
+}

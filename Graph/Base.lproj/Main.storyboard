@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vvF-lZ-kgF">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Repos List View Controller-->
+        <scene sceneID="hMc-yf-Ktc">
+            <objects>
+                <viewController id="vvF-lZ-kgF" customClass="ReposListViewController" customModule="Graph" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Co-Oa-vgq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter repository name" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvf-hx-KfJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vvF-lZ-kgF" id="NXv-cC-dOl"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DBo-tP-yo5">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.14117647059999999" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReposListCell" rowHeight="70" id="Tvs-lG-XPm" customClass="ReposListCell" customModule="Graph" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tvs-lG-XPm" id="BWW-SX-Olg">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="apple/swift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEy-gv-5BT">
+                                                    <rect key="frame" x="20" y="24.666666666666671" width="83" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="0.14117647059999999" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bel-mb-h4k">
+                                                    <rect key="frame" x="337.33333333333331" y="56" width="41.333333333333314" height="4"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UV-ts-BtJ">
+                                                    <rect key="frame" x="343" y="21" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="3qp-oU-lOD"/>
+                                                        <constraint firstAttribute="height" constant="30" id="cEa-cm-oco"/>
+                                                    </constraints>
+                                                    <state key="normal" image="ic_empty_star"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CEy-gv-5BT" firstAttribute="centerY" secondItem="BWW-SX-Olg" secondAttribute="centerY" id="9e1-2A-etH"/>
+                                                <constraint firstAttribute="trailing" secondItem="4UV-ts-BtJ" secondAttribute="trailing" constant="20" id="ALh-3b-wW3"/>
+                                                <constraint firstAttribute="bottom" secondItem="bel-mb-h4k" secondAttribute="bottom" constant="10" id="HST-53-kQb"/>
+                                                <constraint firstItem="4UV-ts-BtJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CEy-gv-5BT" secondAttribute="trailing" constant="10" id="Hme-hc-Y7E"/>
+                                                <constraint firstItem="bel-mb-h4k" firstAttribute="centerX" secondItem="4UV-ts-BtJ" secondAttribute="centerX" id="Js6-PU-ISH"/>
+                                                <constraint firstItem="bel-mb-h4k" firstAttribute="top" secondItem="4UV-ts-BtJ" secondAttribute="bottom" constant="5" id="bSj-2J-K5t"/>
+                                                <constraint firstItem="4UV-ts-BtJ" firstAttribute="top" secondItem="BWW-SX-Olg" secondAttribute="topMargin" constant="10" id="of7-Dd-bcz"/>
+                                                <constraint firstItem="CEy-gv-5BT" firstAttribute="leading" secondItem="BWW-SX-Olg" secondAttribute="leading" constant="20" id="zC0-2v-va1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="repoName" destination="CEy-gv-5BT" id="cFE-ZW-9cx"/>
+                                            <outlet property="starButton" destination="4UV-ts-BtJ" id="G4O-RB-PJm"/>
+                                            <outlet property="starCount" destination="bel-mb-h4k" id="E9b-tq-yWm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="88x-7P-qjG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qvf-hx-KfJ" firstAttribute="leading" secondItem="88x-7P-qjG" secondAttribute="leading" id="8Zx-1m-na0"/>
+                            <constraint firstItem="88x-7P-qjG" firstAttribute="trailing" secondItem="DBo-tP-yo5" secondAttribute="trailing" id="BnZ-u9-K8y"/>
+                            <constraint firstItem="qvf-hx-KfJ" firstAttribute="top" secondItem="88x-7P-qjG" secondAttribute="top" id="EkB-YL-Fun"/>
+                            <constraint firstAttribute="trailing" secondItem="qvf-hx-KfJ" secondAttribute="trailing" id="F4R-yZ-Yl3"/>
+                            <constraint firstItem="DBo-tP-yo5" firstAttribute="top" secondItem="qvf-hx-KfJ" secondAttribute="bottom" id="QaK-VV-ieB"/>
+                            <constraint firstItem="DBo-tP-yo5" firstAttribute="leading" secondItem="88x-7P-qjG" secondAttribute="leading" id="ccx-yr-Z5g"/>
+                            <constraint firstItem="88x-7P-qjG" firstAttribute="bottom" secondItem="DBo-tP-yo5" secondAttribute="bottom" id="kec-Wl-KPa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="qvf-hx-KfJ" id="DJH-m7-4P5"/>
+                        <outlet property="tableView" destination="DBo-tP-yo5" id="GPD-1Y-RrS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHu-nV-wgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3665" y="229"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_empty_star" width="34" height="32"/>
+    </resources>
+</document>
